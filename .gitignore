@@ -1,0 +1,15 @@
+node_modules/**/*
+.expo/*
+.vscode/
+.idea/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+node-vts-device-server/node_modules/**/*
+# macOS
+.DS_Store

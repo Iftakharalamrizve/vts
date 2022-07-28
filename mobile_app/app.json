@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "VTS1",
+    "slug": "VTS1",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC6GM52G_Zf5-U9Ta22uSQAz_lGQEGq05I"
+        }
+      },
+      "package": "com.iftakharalamrizve.VTS1"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

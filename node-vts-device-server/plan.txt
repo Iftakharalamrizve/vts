@@ -1,0 +1,49 @@
+1. Receive VTS data by protocol port 8970
+	imei Checkpost = (check if exist by imei model collection in mongo).
+	after injection type validation 
+		1. Insert to (mongo) lat,lng,speed,status, (Optional course from gt06n) DONE
+		2. Update by imei in (firebase)  lat,lng,speed,status, (Optional course from gt06n)
+		3. Call to (mysql post api with jwt). lat,lng,speed,status, (Optional course from gt06n)
+-----------------------------------------------------------------------------------------------------
+
+2. 	Crud single API for mongo and firebase with (jwt) = (f=1, mo=1, my=0) + post data['']
+	Checkpost (request type, check by domain for web, app url for app)
+	Data will be inserted into desired dtabase based on request
+
+3. Push notifications api(jwt+Header) via node express
+	Send to single user(UID)
+	Send to single Topic(All)
+	Send to multiple topics
+	
+	Create Topics
+	Delete Topics
+	Subscribe user(UID) to Topics
+	Unsubscrive user(UID) from topic
+	
+
+	
+	realtime video streamming by nodejs
+
+
+
+
+
+
+4. (Optional) Realtime node (maximum user 800) comunication with firebase via socket for web(php) only.
+	DB Field customer_status = 0/1
+	1. GET by imei(data 1 row) 
+	2. Search user info by email
+	3. update userInfo by email
+	4. Delete by IMEI(Single)
+	5. Delete by email(Multiple)
+	6. Multiple IMEI(data Multiple row) by email as array
+
+
+5. (Optional) 
+	Realtime node comunication with mongo via (status) socket for web(10sec pull) and app.
+		customer email
+		vehicle = 10
+		10 imei
+
+
+	eshop.ashepashe.com

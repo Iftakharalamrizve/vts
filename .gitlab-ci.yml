@@ -1,0 +1,36 @@
+stages:
+  - api-deployment
+  - run-migration
+  - node-server-deployment
+api-deployment-job:
+  stage: api-deployment
+  needs: []
+  script:
+    - echo "Starting to pull from git"
+    - whoami
+    - pwd
+    - cd /var/www/html/sapi.cpsdbd.com/vts/
+    - ls
+    - git pull origin master
+    - ls
+    - cd api/
+    - cp -r .env.example .env
+    - composer install
+    - php artisan cache:clear
+    - php artisan config:cache
+run-migration-job:
+  stage: run-migration
+  only:
+    variables:
+      - $CI_COMMIT_MESSAGE == "run_migration"
+  script:
+    - cd /api
+    - php artisan migrate
+node-server-deployment-job:
+  stage: node-server-deployment
+  needs: []
+  script:
+    - cd /var/www/html/sapi.cpsdbd.com/vts/node-vts-device-server
+    - npm install
+
+
